@@ -6,6 +6,7 @@
 
 ## Description
 Here's a winter themed digital card.
+![HomepageThumbnail](./assets/winterThemeThumbnail.PNG)
 
 
 ## Questions

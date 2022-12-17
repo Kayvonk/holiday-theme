@@ -10,10 +10,6 @@
   user-select: none;
 }
 
-/* @font-face {
-  font-family: Christmas-Box;
-  src: url("./assets/fonts/Christmas-Box.otf");
-} */
 @font-face {
   font-family: Christmas-Soul;
   src: url("./assets/fonts/Christmas-Soul.ttf");
@@ -249,9 +245,6 @@ footer div {
   height: 10%;
   bottom: 0;
   z-index: 1;
-  /* border-top-style: solid;
-    border-top-width: 5px;
-    border-top-color: black; */
 }
 
 footer div:nth-child(1) {
@@ -385,32 +378,3 @@ margin: 5vh 5vw
     transform: translateX(0vw);
   }
 }
-
-/* .HappyHolidays1,
-.HappyHolidays2,
-.HappyHolidays3,
-.HappyHolidays4,
-.HappyHolidays5,
-.HappyHolidays6,
-.HappyHolidays7,
-.HappyHolidays8,
-.HappyHolidays9,
-.HappyHolidays10,
-.HappyHolidays11,
-.HappyHolidays12,
-.HappyHolidays13,
-.HappyHolidays14 {
-    animation: bounce .25s;
-    /* animation-iteration-count: infinite; */
-  }
-  
-  @keyframes bounce {
-    0% {
-      transform: translateY(10vh);
-    }
-
-    100% {
-      transform: translateY(0vw);
-    }
-  
-} */
