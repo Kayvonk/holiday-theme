@@ -5,7 +5,7 @@
 * [Questions](#questions)
 
 ## Description
-Here's a winter themed digital card.
+Here's a winter themed digital holiday card. Feel free to use for personal use.
 ![HomepageThumbnail](./assets/winterThemeThumbnail.PNG)
 
 

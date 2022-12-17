@@ -101,6 +101,13 @@ main {
   position: relative;
 }
 
+@media (max-width: 769px) {
+#greetingContainer{
+
+display: flex;
+justify-content: center;
+  }
+}
 
 .HappyHolidays {
   color: red;
@@ -281,6 +288,20 @@ footer div:nth-child(4) {
   font-family: SketchIcons, sans-serif;
   font-size: 10vw;
 margin: 5vh 5vw
+}
+
+@media (max-width: 769px) {
+  #envelop div {
+    font-size: 20vw;
+    margin: 10vh 10vw
+  }
+}
+
+@media (max-width: 480px) {
+  #envelop div {
+    font-size: 30vw;
+    margin: 5vh 5vw
+  }
 }
 
 #envelop div:hover{

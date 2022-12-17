@@ -1,9 +1,8 @@
 var snowDiv = document.getElementById("snow");
 var envelopDiv = document.getElementById("envelop");
 var greetingDiv = document.getElementById("greeting");
-let envelop = document.createElement("div");
 
-// const timer = ms => new Promise(res => setTimeout(res, ms))
+let envelop = document.createElement("div");
 
 var snowSizeArr = ["small", "medium", "large"];
 var snowStartingPositionArr = [
@@ -54,11 +53,6 @@ let toggleEnvelop = () => {
     envelop.innerHTML = "P";
     envelopStatusOpened = false;
   }
-//   } else if (!envelopStatusOpened) {
-//     let count = 0
-//     envelop.innerHTML = "O";
-//     envelopStatusOpened = true;
-//   }
 };
 
 envelop.addEventListener("click", toggleEnvelop);
@@ -66,17 +60,11 @@ envelop.addEventListener("click", toggleEnvelop);
 createEnvelop();
 
 // --------HAPPY HOLIDAYS FUNCTIONS----------
-
-
-
-
 let count = 0;
 
 const writeText = () => {
   setTimeout(function () {
     greetingDiv.className = "HappyHolidays"
-    // greetingDiv.className = "HappyHolidays" + " " + "HappyHolidays" + count
-    // greetingDiv.classList.add("HappyHolidays" + count);
     greetingDiv.innerHTML += happyHolidays[count]
     console.log(greetingDiv.innerHTML)
     count += 1
@@ -87,11 +75,6 @@ const writeText = () => {
     }
       }, 225)
   };
-
-
-
-
-
 
 // ---------------SNOW FUNCTIONS------------
 let letItSnow = () => {
@@ -124,7 +107,7 @@ let letItSnowPart2 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -150,7 +133,7 @@ let letItSnowPart3 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -176,7 +159,7 @@ let letItSnowPart4 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -202,7 +185,7 @@ let letItSnowPart5 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -225,10 +208,10 @@ let letItSnowPart5 = () => {
 };
 
 let letItSnowPart6 = () => {
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 20; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -254,7 +237,7 @@ let letItSnowPart7 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -280,7 +263,7 @@ let letItSnowPart8 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -306,7 +289,7 @@ let letItSnowPart9 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -332,7 +315,7 @@ let letItSnowPart10 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -358,7 +341,7 @@ let letItSnowPart11 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -384,7 +367,7 @@ let letItSnowPart12 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -410,7 +393,7 @@ let letItSnowPart13 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -436,7 +419,7 @@ let letItSnowPart14 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -462,7 +445,7 @@ let letItSnowPart15 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -488,7 +471,7 @@ let letItSnowPart16 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -514,7 +497,7 @@ let letItSnowPart17 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -540,7 +523,7 @@ let letItSnowPart18 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -566,7 +549,7 @@ let letItSnowPart19 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -592,7 +575,7 @@ let letItSnowPart20 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
@@ -618,7 +601,7 @@ let letItSnowPart21 = () => {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 9)];
+      snowStartingPositionArr[Math.floor(Math.random() * 10)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
