@@ -64,10 +64,11 @@ let count = 0;
 
 const writeText = () => {
   setTimeout(function () {
+    let letter = document.createElement("div")
     greetingDiv.className = "HappyHolidays"
-    greetingDiv.innerHTML += happyHolidays[count]
-    console.log(greetingDiv.innerHTML)
-    count += 1
+    greetingDiv.appendChild(letter)
+    letter.innerHTML += happyHolidays[count]
+        count += 1
     if (count < happyHolidays.length) {
       writeText();
     } else {

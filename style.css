@@ -109,12 +109,27 @@ justify-content: center;
 }
 
 .HappyHolidays {
+  display: flex;
   color: red;
   font-family: Christmas-Soul, sans-serif;
   font-size: 10vw;
   position: fixed;
-  top: 35vh;
+  top: 37vh;
   z-index: 4;
+}
+
+.HappyHolidays div {
+  min-width: 2vw;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #snow {
@@ -154,11 +169,13 @@ justify-content: center;
 .normal {
   animation: snowFallAnimation2 10s;
   animation-iteration-count: infinite;
+  animation-delay: 2s;
 }
 
 .fast {
   animation: snowFallAnimation3 10s;
   animation-iteration-count: infinite;
+  animation-delay: 4s;
 }
 
 @keyframes snowFallAnimation1 {
@@ -176,8 +193,12 @@ justify-content: center;
     transform: translateY(0vh);
   }
 
+  80% {
+    transform: translateY(100vh);
+  }
+
   100% {
-    transform: translateY(125vh);
+    transform: translateY(100vh);
   }
 }
 
@@ -186,8 +207,11 @@ justify-content: center;
     transform: translateY(0vh);
   }
 
+  60% {
+    transform: translateY(100vh);
+  }
   100% {
-    transform: translateY(150vh);
+    transform: translateY(100vh);
   }
 }
 
@@ -333,13 +357,13 @@ margin: 5vh 5vw;
     transform: translateX(0vw);
   }
   25% {
-    transform: translateX(-1vw);
+    transform: translateX(-1.25vw);
   }
   50% {
     transform: translateX(0vw);
   }
   75% {
-    transform: translateX(1vw);
+    transform: translateX(1.25vw);
   }
   100% {
     transform: translateX(0vw);
@@ -351,13 +375,13 @@ margin: 5vh 5vw;
     transform: translateX(0vw);
   }
   25% {
-    transform: translateX(1vw);
+    transform: translateX(1.25vw);
   }
   50% {
     transform: translateX(0vw);
   }
   75% {
-    transform: translateX(-1vw);
+    transform: translateX(-1.25vw);
   }
   100% {
     transform: translateX(0vw);
@@ -369,13 +393,13 @@ margin: 5vh 5vw;
     transform: translateX(0vw);
   }
   25% {
-    transform: translateX(-2vw);
+    transform: translateX(-2.5vw);
   }
   50% {
     transform: translateX(0vw);
   }
   75% {
-    transform: translateX(2vw);
+    transform: translateX(2.5vw);
   }
   100% {
     transform: translateX(0vw);
@@ -387,13 +411,13 @@ margin: 5vh 5vw;
     transform: translateX(0vw);
   }
   25% {
-    transform: translateX(2vw);
+    transform: translateX(2.5vw);
   }
   50% {
     transform: translateX(0vw);
   }
   75% {
-    transform: translateX(-2vw);
+    transform: translateX(-2.5vw);
   }
   100% {
     transform: translateX(0vw);
