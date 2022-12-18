@@ -32,7 +32,7 @@ body {
   overflow: hidden;
 }
 
-/* -----------------SECTION------------ */
+/* ---------------MOON-------------- */
 section {
   display: flex;
   justify-content: flex-end;
@@ -95,16 +95,16 @@ section div {
   }
 }
 
-/* ---------MAIN--------------- */
+/* -------------GREETING--------------- */
 
 main {
   position: relative;
 }
 
 @media (max-width: 769px) {
-#greetingContainer{
-display: flex;
-justify-content: center;
+  #greetingContainer {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -131,6 +131,9 @@ justify-content: center;
     opacity: 1;
   }
 }
+
+
+/* -------------SNOW----------- */
 
 #snow {
   position: relative;
@@ -216,7 +219,7 @@ justify-content: center;
 }
 
 .one {
-  transform: translateX(5vw)
+  transform: translateX(5vw);
 }
 
 .two {
@@ -261,76 +264,6 @@ justify-content: center;
   opacity: 1;
 }
 
-/* ------------FOOTER--------- */
-
-footer {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-footer div {
-  position: fixed;
-  background-color: snow;
-  width: 200vw;
-  height: 10%;
-  bottom: 0;
-  z-index: 1;
-}
-
-footer div:nth-child(1) {
-  height: 20%;
-}
-
-footer div:nth-child(2) {
-  transform: rotate(10deg);
-  height: 20%;
-  border-radius: var(--border-radius);
-}
-
-footer div:nth-child(3) {
-  height: 15%;
-  transform: rotate(-10deg);
-  border-radius: var(--border-radius);
-}
-
-footer div:nth-child(4) {
-  height: 23%;
-  width: 100vw;
-  border-radius: var(--border-radius);
-}
-
-#envelop {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 3
-}
-
-#envelop div {
-  color: black;
-  font-family: SketchIcons, sans-serif;
-  font-size: 10vw;
-margin: 5vh 5vw;
-}
-
-@media (max-width: 769px) {
-  #envelop div {
-    font-size: 20vw;
-    margin: 5vh 5vw
-  }
-}
-
-@media (max-width: 480px) {
-  #envelop div {
-    font-size: 30vw;
-    margin: 1vh 5vw
-  }
-}
-
-#envelop div:hover{
-  color: red;
-}
 
 .lightLeft {
   animation: snowSwayAnimation1 10s;
@@ -422,4 +355,77 @@ margin: 5vh 5vw;
   100% {
     transform: translateX(0vw);
   }
+}
+
+/* ------------GROUND---------- */
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+footer div {
+  position: fixed;
+  background-color: snow;
+  width: 200vw;
+  height: 10%;
+  bottom: 0;
+  z-index: 1;
+}
+
+footer div:nth-child(1) {
+  height: 20%;
+}
+
+footer div:nth-child(2) {
+  transform: rotate(10deg);
+  height: 20%;
+  border-radius: var(--border-radius);
+}
+
+footer div:nth-child(3) {
+  height: 15%;
+  transform: rotate(-10deg);
+  border-radius: var(--border-radius);
+}
+
+footer div:nth-child(4) {
+  height: 23%;
+  width: 100vw;
+  border-radius: var(--border-radius);
+}
+
+/* --------------ENVELOP----------- */
+
+#envelop {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+#envelop div {
+  color: black;
+  font-family: SketchIcons, sans-serif;
+  font-size: 10vw;
+  margin: 5vh 5vw;
+}
+
+@media (max-width: 769px) {
+  #envelop div {
+    font-size: 20vw;
+    margin: 5vh 5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  #envelop div {
+    font-size: 30vw;
+    margin: 1vh 5vw;
+  }
+}
+
+#envelop div:hover {
+  color: red;
 }
