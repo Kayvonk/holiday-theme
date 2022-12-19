@@ -6,7 +6,7 @@
 
 ## Description
 Here's a winter themed digital holiday card. Feel free to use for personal use.
-![HomepageThumbnail](./assets/winterThemeThumbnail.PNG)
+![HomepageThumbnail](./assets/images/winterThemeThumbnail.PNG)
 
 
 ## Questions
