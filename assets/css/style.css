@@ -121,7 +121,7 @@ main {
   color: red;
   text-shadow: 0 0 10px #ffffff;
   min-width: 2vw;
-  animation: fadeIn 1s, glow 7s infinite;
+  animation: fadeIn 1s, glow 5s infinite;
 }
 
 @keyframes glow {
@@ -151,6 +151,12 @@ main {
   position: relative;
 }
 
+@media (max-width: 1025px) {
+  #snow > div:nth-child(even) {
+    opacity: 0;
+  }
+}
+
 .snowball {
   position: absolute;
   top: -10vh;
@@ -176,19 +182,31 @@ main {
   height: 30px;
 }
 
-.slow {
+.slowest {
   animation: snowFallAnimation1 10s;
   animation-iteration-count: infinite;
 }
 
-.normal {
+.slow {
   animation: snowFallAnimation2 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+.normal {
+  animation: snowFallAnimation3 10s;
   animation-iteration-count: infinite;
   animation-delay: 2s;
 }
 
 .fast {
-  animation: snowFallAnimation3 10s;
+  animation: snowFallAnimation4 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+
+.fastest {
+  animation: snowFallAnimation5 10s;
   animation-iteration-count: infinite;
   animation-delay: 4s;
 }
@@ -208,7 +226,7 @@ main {
     transform: translateY(0vh);
   }
 
-  80% {
+  90% {
     transform: translateY(100vh);
   }
 
@@ -222,7 +240,7 @@ main {
     transform: translateY(0vh);
   }
 
-  60% {
+  80% {
     transform: translateY(100vh);
   }
   100% {
@@ -230,6 +248,31 @@ main {
   }
 }
 
+@keyframes snowFallAnimation4 {
+  0% {
+    transform: translateY(0vh);
+  }
+
+  70% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes snowFallAnimation5 {
+  0% {
+    transform: translateY(0vh);
+  }
+
+  60% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
 .one {
   transform: translateX(5vw);
 }

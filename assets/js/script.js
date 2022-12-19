@@ -17,8 +17,8 @@ var snowStartingPositionArr = [
   "nine",
   "ten",
 ];
-var snowOpacityArr = ["lessOpacity", "moreOpacity"];
-var snowFallSpeedArr = ["slow", "normal", "fast"];
+var snowOpacityArr = ["lessOpacity", "moreOpacity", "moreOpacity"];
+var snowFallSpeedArr = ["slowest", "slow", "normal", "fast", "fastest"];
 var snowSwayArr = ["lightLeft", "lightRight", "heavyLeft", "heavyRight"];
 var envelopStatusOpened = true;
 var happyHolidays = [
@@ -88,11 +88,11 @@ function letItSnow() {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
       snowStartingPositionArr[Math.floor(Math.random() * 10)];
-    let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 2)];
+    let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 3)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
     newSnowballFallDiv.className =
-      snowFallSpeedArr[Math.floor(Math.random() * 3)];
+      snowFallSpeedArr[Math.floor(Math.random() * 5)];
     newSnowballSwayDiv.className = snowSwayArr[Math.floor(Math.random() * 4)];
     let newSnowball = document.createElement("div");
     newSnowball.className =
