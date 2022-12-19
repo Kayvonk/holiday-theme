@@ -5,7 +5,7 @@
 * [Questions](#questions)
 
 ## Description
-Here's a winter themed digital holiday card. Feel free to use for personal use.
+Using HTML, CSS, and JavaScript, this project serves as a winter themed digital holiday card. Feel free to use for personal use.
 ![HomepageThumbnail](./assets/images/winterThemeThumbnail.PNG)
 
 
