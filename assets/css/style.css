@@ -274,42 +274,62 @@ main {
     transform: translateY(100vh);
   }
 }
+
 .one {
   transform: translateX(5vw);
 }
-
 .two {
+  transform: translateX(10vw);
+}
+.three {
   transform: translateX(15vw);
 }
-
-.three {
+.four {
+  transform: translateX(20vw);
+}
+.five {
   transform: translateX(25vw);
 }
-
-.four {
+.six {
+  transform: translateX(30vw);
+}
+.seven {
   transform: translateX(35vw);
 }
-
-.five {
+.eight {
+  transform: translateX(40vw);
+}
+.nine {
   transform: translateX(45vw);
 }
-
-.six {
+.ten {
+  transform: translateX(50vw);
+}
+.eleven {
   transform: translateX(55vw);
 }
-
-.seven {
+.twelve {
+  transform: translateX(60vw);
+}
+.thirteen {
   transform: translateX(65vw);
 }
-
-.eight {
+.fourteen {
+  transform: translateX(70vw);
+}
+.fifteen {
   transform: translateX(75vw);
 }
-
-.nine {
+.sixteen {
+  transform: translateX(80vw);
+}
+.seventeen {
   transform: translateX(85vw);
 }
-.ten {
+.eighteen {
+  transform: translateX(90vw);
+}
+.nineteen {
   transform: translateX(95vw);
 }
 

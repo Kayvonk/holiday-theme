@@ -16,6 +16,15 @@ var snowStartingPositionArr = [
   "eight",
   "nine",
   "ten",
+  "eleven",
+  "twelve",
+  "thirteen",
+  "fourteen",
+  "fifteen",
+  "sixteen",
+  "seventeen",
+  "eighteen",
+  "nineteen"
 ];
 var snowOpacityArr = ["lessOpacity", "moreOpacity", "moreOpacity"];
 var snowFallSpeedArr = ["slowest", "slow", "normal", "fast", "fastest"];
@@ -87,7 +96,7 @@ function letItSnow() {
   for (let i = 0; i < 15; i++) {
     let snowSize = snowSizeArr[Math.floor(Math.random() * 3)];
     let snowStartingPosition =
-      snowStartingPositionArr[Math.floor(Math.random() * 10)];
+      snowStartingPositionArr[Math.floor(Math.random() * 20)];
     let snowOpacity = snowOpacityArr[Math.floor(Math.random() * 3)];
     let newSnowballFallDiv = document.createElement("div");
     let newSnowballSwayDiv = document.createElement("div");
