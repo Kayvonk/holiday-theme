@@ -12,11 +12,11 @@
 
 @font-face {
   font-family: Christmas-Soul;
-  src: url("./assets/fonts/Christmas-Soul.ttf");
+  src: url("../fonts/Christmas-Soul.ttf");
 }
 @font-face {
   font-family: SketchIcons;
-  src: url("./assets/fonts/SketchIcons.ttf");
+  src: url("../fonts/SketchIcons.ttf");
 }
 
 body {
@@ -110,7 +110,6 @@ main {
 
 .HappyHolidays {
   display: flex;
-  color: red;
   font-family: Christmas-Soul, sans-serif;
   font-size: 10vw;
   position: fixed;
@@ -119,8 +118,22 @@ main {
 }
 
 .HappyHolidays div {
+  color: red;
+  text-shadow: 0 0 10px #ffffff;
   min-width: 2vw;
-  animation: fadeIn 1s;
+  animation: fadeIn 1s, glow 7s infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 15px #ffffff;
+  }
+  50% {
+    text-shadow: 0 0 5px #ff4848;
+  }
+  100% {
+    text-shadow: 0 0 15px #ffffff;
+  }
 }
 
 @keyframes fadeIn {
@@ -131,7 +144,6 @@ main {
     opacity: 1;
   }
 }
-
 
 /* -------------SNOW----------- */
 
@@ -263,7 +275,6 @@ main {
 .moreOpacity {
   opacity: 1;
 }
-
 
 .lightLeft {
   animation: snowSwayAnimation1 10s;

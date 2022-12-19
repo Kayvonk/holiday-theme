@@ -47,7 +47,7 @@ let createEnvelop = () => {
 };
 
 let toggleEnvelop = () => {
-    
+
   if (envelopStatusOpened) {
     writeText()
     envelop.innerHTML = "P";
@@ -59,7 +59,7 @@ envelop.addEventListener("click", toggleEnvelop);
 
 createEnvelop();
 
-// --------HAPPY HOLIDAYS FUNCTIONS----------
+// --------HAPPY HOLIDAYS FUNCTION----------
 let count = 0;
 
 const writeText = () => {
@@ -68,16 +68,16 @@ const writeText = () => {
     greetingDiv.className = "HappyHolidays"
     greetingDiv.appendChild(letter)
     letter.innerHTML += happyHolidays[count]
-        count += 1
+    count += 1
     if (count < happyHolidays.length) {
       writeText();
     } else {
       return
     }
-      }, 225)
-  };
+  }, 250)
+};
 
-// ---------------SNOW FUNCTIONS------------
+// ---------------SNOW FUNCTION------------
 
 let myInterval = setInterval(letItSnow, 500);
 
@@ -108,8 +108,7 @@ function letItSnow() {
     newSnowballSwayDiv.appendChild(newSnowball);
   }
   rowCount += 1
-  if(rowCount === 22) {
+  if (rowCount === 22) {
     clearInterval(myInterval)
-
   }
 };
