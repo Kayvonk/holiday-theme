@@ -47,12 +47,11 @@ var happyHolidays = [
   "s",
 ];
 
-
 // -----------ENVELOP FUNCTIONS------------
 let createEnvelop = () => {
   envelop.innerHTML = "O";
   envelop.className = "openedEnvelop";
-  envelopDiv.appendChild(envelop);
+  envelopDiv.append(envelop);
 };
 
 let toggleEnvelop = () => {
