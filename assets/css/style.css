@@ -527,10 +527,10 @@ footer div:nth-child(4) {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   #envelop div {
     font-size: 30vw;
-    margin: 1vh 5vw;
+    margin: 4vh 5vw;
   }
 }
 
