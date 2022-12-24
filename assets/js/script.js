@@ -36,6 +36,7 @@ var snowSwayArr = ["lightLeft", "lightRight", "heavyLeft", "heavyRight"];
 var envelopStatusOpened = false;
 var musicStatusOn = false;
 var musicNoteToggleStatus = false;
+// var stopSong = false;
 var happyHolidays = [
   "H",
   "a",
@@ -94,11 +95,14 @@ const musicNoteToggle = () => {
   if (!musicNoteToggleStatus && !musicStatusOn) {
     musicNoteToggleStatus = true;
     musicStatusOn = true;
+    toggleMusic();
   } else if (musicNoteToggleStatus) {
     musicNoteToggleStatus = false;
     musicStatusOn = false;
+    clearTimeout(timer);
+    // stopSong = true;
+    audio.pause();
   }
-  toggleMusic();
 };
 
 let createMusicDivs = () => {
@@ -107,9 +111,9 @@ let createMusicDivs = () => {
   let playBtn = document.createElement("div");
   playBtn.className = "playBtn";
   playBtn.innerHTML = "b";
-  let pauseBtn = document.createElement("div");
-  pauseBtn.className = "pauseBtn";
-  pauseBtn.innerHTML = "c";
+  let stopBtn = document.createElement("div");
+  stopBtn.className = "stopBtn";
+  stopBtn.innerHTML = "h";
   let previousSongBtn = document.createElement("div");
   previousSongBtn.className = "previousSongBtn";
   previousSongBtn.innerHTML = "f";
@@ -119,7 +123,7 @@ let createMusicDivs = () => {
   musicOptions.setAttribute("style", "display:none");
   musicOptions.append(previousSongBtn);
   musicOptions.append(playBtn);
-  musicOptions.append(pauseBtn);
+  musicOptions.append(stopBtn);
   musicOptions.append(nextSongBtn);
 };
 
@@ -128,17 +132,20 @@ createMusicDivs();
 document.addEventListener("click", function (e) {
   const target = e.target.closest(".playBtn");
   if (target) {
+    audio.pause();
+    clearTimeout(timer);
+    // stopSong = true;
     musicStatusOn = true;
-    console.log("PlaySong");
-    audio.play();
+    toggleMusic();
   }
 });
 
 document.addEventListener("click", function (e) {
-  const target = e.target.closest(".pauseBtn");
+  const target = e.target.closest(".stopBtn");
   if (target) {
+    clearTimeout(timer);
+    // stopSong = true;
     musicStatusOn = false;
-    console.log("pauseSong");
     audio.pause();
   }
 });
@@ -146,7 +153,9 @@ document.addEventListener("click", function (e) {
 document.addEventListener("click", function (e) {
   const target = e.target.closest(".previousSongBtn");
   if (target) {
+    // stopSong = true;
     audio.pause();
+    clearTimeout(timer);
     if (musicCount > 0) {
       musicCount--;
     }
@@ -158,6 +167,8 @@ document.addEventListener("click", function (e) {
   const target = e.target.closest(".nextSongBtn");
   if (target) {
     audio.pause();
+    clearTimeout(timer);
+    // stopSong = true;
     if (musicCount < 4) {
       musicCount += 1;
     }
@@ -173,12 +184,13 @@ let duration = musicArray[musicCount].duration;
 let toggleMusic = () => {
   if (musicNoteToggleStatus) {
     if (musicCount < 5) {
+      // stopSong = false;
       audio = new Audio(musicArray[musicCount].song);
       duration = musicArray[musicCount].duration;
       console.log("Song playing: " + musicArray[musicCount].name);
       audio.play();
       musicOptions.setAttribute("style", "display:flex");
-      setTimeout(() => {
+      timer = setTimeout(() => {
         musicCount += 1;
         if (musicNoteToggleStatus && musicStatusOn) {
           toggleMusic();
@@ -189,7 +201,6 @@ let toggleMusic = () => {
     }
   } else if (!musicNoteToggleStatus || !musicStatusOn) {
     audio.pause();
-    console.log("pause audio");
     musicOptions.setAttribute("style", "display:none");
     return;
   }
