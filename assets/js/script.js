@@ -111,15 +111,15 @@ let createMusicDivs = () => {
   let songDetails = document.createElement("div");
   songDetails.className = "songDetails";
   songDetails.setAttribute("style", "display:none");
-  let songName = document.createElement("div");
-  songName.className = "songName";
+  let songNameDiv = document.createElement("pre");
+  songNameDiv.className = "songName";
   musicOptions.setAttribute("style", "display:none");
   musicOptions.append(previousSongBtn);
   musicOptions.append(playBtn);
   musicOptions.append(pauseBtn);
   musicOptions.append(nextSongBtn);
   nowPlaying.append(songDetails);
-  songDetails.append(songName);
+  songDetails.append(songNameDiv);
 };
 
 createMusicDivs();
@@ -156,8 +156,15 @@ let toggleMusic = () => {
       duration = musicArray[musicCount].duration;
       console.log("Song playing: " + musicArray[musicCount].name);
       audio.play();
-      document.querySelector(".songName").textContent =
-        musicArray[musicCount].name;
+      let songName = musicArray[musicCount].name
+      let textCorrectionAmount = 40 - musicArray[musicCount].name.length
+      if(textCorrectionAmount > 0) {
+        console.log(textCorrectionAmount)
+        // songName = songName.padStart(10, ' ')
+        songName = ' '.repeat(textCorrectionAmount) + musicArray[musicCount].name
+        console.log(songName);
+      }
+      document.querySelector(".songName").textContent = songName;
       musicOptions.setAttribute("style", "display:flex");
       timer = setTimeout(() => {
         musicCount += 1;
