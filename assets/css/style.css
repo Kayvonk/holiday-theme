@@ -106,11 +106,23 @@ main {
   position: relative;
 }
 
-@media (max-width: 769px) {
   #greetingContainer {
     display: flex;
    margin-left: 9vw;
+   animation: bounce linear 5s infinite;
+   animation-delay: 3.5s;
   }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0vh);
+      }
+  50% {
+    transform: translateY(-2vh);
+  }
+  100% {
+    transform: translateY(0vh);
+}
 }
 
 .HappyHolidays {
