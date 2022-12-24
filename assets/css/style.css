@@ -18,6 +18,10 @@
   font-family: SketchIcons;
   src: url("../fonts/SketchIcons.ttf");
 }
+@font-face {
+  font-family: MusicButtons;
+  src: url("../fonts/font-bottons-music pro.ttf");
+}
 
 body {
   position: relative;
@@ -145,6 +149,12 @@ main {
     opacity: 1;
   }
 }
+
+.fadeOut {
+transition: ease-out .25s;
+opacity: 0;
+}
+
 
 /* -------------SNOW----------- */
 
@@ -537,3 +547,76 @@ footer div:nth-child(4) {
 #envelop div:hover {
   color: red;
 }
+
+/* -----------------MUSIC----------- */
+#music {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+#music div {
+  color: black;
+  font-family: SketchIcons, sans-serif;
+  font-size: 10vw;
+  margin: 5vh 5vw;
+}
+
+@media (max-width: 769px) {
+  #music div {
+    font-size: 20vw;
+    margin: 5vh 5vw;
+  }
+}
+
+@media (max-width: 420px) {
+  #music div {
+    font-size: 30vw;
+    margin: 4vh 5vw;
+  }
+}
+
+#music div:hover {
+  color: red;
+}
+
+/* ------------MUSIC OPTIONS---------- */
+
+#musicOptions {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+#musicOptions div {
+  color: #2d2d2d;
+  font-family: MusicButtons, sans-serif;
+  font-size: 4vw;
+  margin: 10vh 1vw;
+}
+
+@media (max-width: 769px) {
+  #musicOptions div {
+    font-size: 10vw;
+    margin: 10vh 1vw;
+  }
+}
+
+@media (max-width: 420px) {
+  #musicOptions div {
+    font-size: 10vw;
+    margin: 15vh 1vw;
+  }
+}
+
+#musicOptions div:hover {
+  color: red;
+}
+
