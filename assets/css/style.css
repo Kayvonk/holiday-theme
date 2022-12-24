@@ -155,7 +155,6 @@ transition: ease-out .25s;
 opacity: 0;
 }
 
-
 /* -------------SNOW----------- */
 
 #snow {
@@ -549,6 +548,7 @@ footer div:nth-child(4) {
 }
 
 /* -----------------MUSIC----------- */
+
 #music {
   position: absolute;
   right: 0;
@@ -592,7 +592,6 @@ footer div:nth-child(4) {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
 }
 
 #musicOptions div {
@@ -600,6 +599,7 @@ footer div:nth-child(4) {
   font-family: MusicButtons, sans-serif;
   font-size: 4vw;
   margin: 10vh 1vw;
+  z-index: 4;
 }
 
 @media (max-width: 769px) {
@@ -611,7 +611,6 @@ footer div:nth-child(4) {
 
 @media (max-width: 420px) {
   #musicOptions div {
-    font-size: 10vw;
     margin: 15vh 1vw;
   }
 }
@@ -620,3 +619,60 @@ footer div:nth-child(4) {
   color: red;
 }
 
+/* --------NOW PLAYING-------- */
+
+#nowPlaying {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+
+.songDetails {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 20vw;
+  height: 5vh;
+  background-color: snow;
+  color: #2d2d2d;
+  font-family: sans-serif;
+  font-size: 12pt;
+  margin-top: 5vh;
+  border-radius: 50px;
+}
+
+@media (max-width: 769px) {
+  .songDetails {
+    font-size: 12pt;
+    margin-top: 3vh;
+    width: 30vw;
+  }
+}
+
+@media (max-width: 420px) {
+  .songDetails {
+    font-size: 11pt;
+    width: 40vw;
+  }
+}
+
+.songName {
+  white-space:nowrap;
+  transform: translateX(100%);
+  animation: scrollText 15s linear infinite;
+  }
+
+@keyframes scrollText {
+  from {
+      transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

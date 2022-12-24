@@ -36,7 +36,7 @@ var snowSwayArr = ["lightLeft", "lightRight", "heavyLeft", "heavyRight"];
 var envelopStatusOpened = false;
 var musicStatusOn = false;
 var musicNoteToggleStatus = false;
-// var stopSong = false;
+var songPaused = false;
 var happyHolidays = [
   "H",
   "a",
@@ -54,15 +54,6 @@ var happyHolidays = [
   "s",
 ];
 
-// -----------ENVELOP FUNCTIONS------------
-let createEnvelop = () => {
-  envelop.innerHTML = "O";
-  envelopDiv.append(envelop);
-};
-
-createEnvelop();
-
-// ---------MUSIC FUNCTIONS-----------
 let musicArray = [
   {
     name: "Dee Yan-Key- We Wish You A Merry Christmas",
@@ -91,19 +82,16 @@ let musicArray = [
   },
 ];
 
-const musicNoteToggle = () => {
-  if (!musicNoteToggleStatus && !musicStatusOn) {
-    musicNoteToggleStatus = true;
-    musicStatusOn = true;
-    toggleMusic();
-  } else if (musicNoteToggleStatus) {
-    musicNoteToggleStatus = false;
-    musicStatusOn = false;
-    clearTimeout(timer);
-    // stopSong = true;
-    audio.pause();
-  }
+// -----------ENVELOP FUNCTION------------
+
+let createEnvelop = () => {
+  envelop.innerHTML = "O";
+  envelopDiv.append(envelop);
 };
+
+createEnvelop();
+
+// ---------MUSIC FUNCTIONS-----------
 
 let createMusicDivs = () => {
   musicBox.innerHTML = ";";
@@ -111,70 +99,50 @@ let createMusicDivs = () => {
   let playBtn = document.createElement("div");
   playBtn.className = "playBtn";
   playBtn.innerHTML = "b";
-  let stopBtn = document.createElement("div");
-  stopBtn.className = "stopBtn";
-  stopBtn.innerHTML = "h";
+  let pauseBtn = document.createElement("div");
+  pauseBtn.className = "pauseBtn";
+  pauseBtn.innerHTML = "c";
   let previousSongBtn = document.createElement("div");
   previousSongBtn.className = "previousSongBtn";
   previousSongBtn.innerHTML = "f";
   let nextSongBtn = document.createElement("div");
   nextSongBtn.className = "nextSongBtn";
   nextSongBtn.innerHTML = "g";
+  let songDetails = document.createElement("div");
+  songDetails.className = "songDetails";
+  songDetails.setAttribute("style", "display:none");
+  let songName = document.createElement("div");
+  songName.className = "songName";
   musicOptions.setAttribute("style", "display:none");
   musicOptions.append(previousSongBtn);
   musicOptions.append(playBtn);
-  musicOptions.append(stopBtn);
+  musicOptions.append(pauseBtn);
   musicOptions.append(nextSongBtn);
+  nowPlaying.append(songDetails);
+  songDetails.append(songName);
 };
 
 createMusicDivs();
 
-document.addEventListener("click", function (e) {
-  const target = e.target.closest(".playBtn");
-  if (target) {
-    audio.pause();
-    clearTimeout(timer);
-    // stopSong = true;
+const musicNoteToggle = () => {
+  if (!musicNoteToggleStatus && !musicStatusOn) {
+    musicNoteToggleStatus = true;
     musicStatusOn = true;
     toggleMusic();
-  }
-});
-
-document.addEventListener("click", function (e) {
-  const target = e.target.closest(".stopBtn");
-  if (target) {
-    clearTimeout(timer);
-    // stopSong = true;
+    document
+      .querySelector(".songDetails")
+      .setAttribute("style", "display:flex");
+  } else if (musicNoteToggleStatus) {
+    musicNoteToggleStatus = false;
     musicStatusOn = false;
-    audio.pause();
-  }
-});
-
-document.addEventListener("click", function (e) {
-  const target = e.target.closest(".previousSongBtn");
-  if (target) {
-    // stopSong = true;
-    audio.pause();
     clearTimeout(timer);
-    if (musicCount > 0) {
-      musicCount--;
-    }
-    toggleMusic();
-  }
-});
-
-document.addEventListener("click", function (e) {
-  const target = e.target.closest(".nextSongBtn");
-  if (target) {
     audio.pause();
-    clearTimeout(timer);
-    // stopSong = true;
-    if (musicCount < 4) {
-      musicCount += 1;
-    }
-    toggleMusic();
+    musicOptions.setAttribute("style", "display:none");
+    document
+      .querySelector(".songDetails")
+      .setAttribute("style", "display:none");
   }
-});
+};
 
 let musicCount = 0;
 
@@ -184,15 +152,16 @@ let duration = musicArray[musicCount].duration;
 let toggleMusic = () => {
   if (musicNoteToggleStatus) {
     if (musicCount < 5) {
-      // stopSong = false;
       audio = new Audio(musicArray[musicCount].song);
       duration = musicArray[musicCount].duration;
       console.log("Song playing: " + musicArray[musicCount].name);
       audio.play();
+      document.querySelector(".songName").textContent =
+        musicArray[musicCount].name;
       musicOptions.setAttribute("style", "display:flex");
       timer = setTimeout(() => {
         musicCount += 1;
-        if (musicNoteToggleStatus && musicStatusOn) {
+        if (musicNoteToggleStatus && musicStatusOn && !songPaused) {
           toggleMusic();
         }
       }, duration);
@@ -206,9 +175,67 @@ let toggleMusic = () => {
   }
 };
 
-musicBox.addEventListener("click", musicNoteToggle);
+let pausedTimerAdjuster = () => {
+  duration = musicArray[musicCount].duration - audio.currentTime * 1000;
+  let timeRemaining = duration / 1000;
+  console.log("Time remaining: " + timeRemaining.toFixed() + "s");
+  timer = setTimeout(() => {
+    musicCount += 1;
+    if (musicNoteToggleStatus && musicStatusOn && !songPaused) {
+      toggleMusic();
+    }
+  }, duration);
+};
 
-createEnvelop();
+document.addEventListener("click", function (e) {
+  const target = e.target.closest(".playBtn");
+  if (target) {
+    if (songPaused) {
+      songPaused = false;
+      musicStatusOn = true;
+      audio.play();
+      pausedTimerAdjuster();
+    }
+  }
+});
+
+document.addEventListener("click", function (e) {
+  const target = e.target.closest(".pauseBtn");
+  if (target) {
+    clearTimeout(timer);
+    songPaused = true;
+    musicStatusOn = false;
+    audio.pause();
+  }
+});
+
+document.addEventListener("click", function (e) {
+  const target = e.target.closest(".previousSongBtn");
+  if (target) {
+    audio.pause();
+    clearTimeout(timer);
+    musicStatusOn = true;
+    if (musicCount > 0) {
+      musicCount--;
+    }
+    toggleMusic();
+  }
+});
+
+document.addEventListener("click", function (e) {
+  const target = e.target.closest(".nextSongBtn");
+  if (target) {
+    audio.pause();
+    clearTimeout(timer);
+    musicStatusOn = true;
+    if (musicCount < 4) {
+      musicCount += 1;
+    }
+    toggleMusic();
+  }
+});
+
+musicBox.addEventListener("click", musicNoteToggle);
 
 // --------HAPPY HOLIDAYS FUNCTIONS----------
 
@@ -265,8 +292,8 @@ const removeText = () => {
 };
 
 envelop.addEventListener("click", toggleTyping);
-// ---------------SNOW FUNCTION------------
 
+// ---------------SNOW FUNCTION------------
 let myInterval = setInterval(letItSnow, 500);
 
 let rowCount = 0;
