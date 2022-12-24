@@ -106,23 +106,23 @@ main {
   position: relative;
 }
 
-  #greetingContainer {
-    display: flex;
-   margin-left: 9vw;
-   animation: bounce linear 5s infinite;
-   animation-delay: 3.5s;
-  }
+#greetingContainer {
+  display: flex;
+  margin-left: 9vw;
+  animation: bounce linear 5s infinite;
+  animation-delay: 3.5s;
+}
 
 @keyframes bounce {
   0% {
     transform: translateY(0vh);
-      }
+  }
   50% {
     transform: translateY(-2vh);
   }
   100% {
     transform: translateY(0vh);
-}
+  }
 }
 
 .HappyHolidays {
@@ -163,8 +163,8 @@ main {
 }
 
 .fadeOut {
-transition: ease-out .25s;
-opacity: 0;
+  transition: ease-out 0.25s;
+  opacity: 0;
 }
 
 /* -------------SNOW----------- */
@@ -459,7 +459,6 @@ footer {
   position: relative;
   display: flex;
   justify-content: center;
-
 }
 
 footer div {
@@ -675,14 +674,14 @@ footer div:nth-child(4) {
 }
 
 .songName {
-  white-space:nowrap;
+  white-space: nowrap;
   transform: translateX(100%);
   animation: scrollText 15s linear infinite;
-  }
+}
 
 @keyframes scrollText {
   from {
-      transform: translateX(100%);
+    transform: translateX(100%);
   }
   to {
     transform: translateX(-100%);
