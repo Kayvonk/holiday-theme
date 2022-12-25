@@ -76,9 +76,9 @@ let musicArray = [
     duration: "264000",
   },
   {
-    name: "Mid-Air Machine- Joy to the World _ Sync Mix",
-    song: "./assets/music/Mid-AirMachine-JoytotheWorld_SyncMix.mp3",
-    duration: "80000",
+    name: "Snowy O. McSnowerson and the Oh So Snowly Snowers - Feliz Navidad",
+    song: "./assets/music/SnowyOMcSnowersonandtheOhSoSnowlySnowers-FelizNavidad.mp3",
+    duration: "190000",
   },
 ];
 
@@ -159,10 +159,7 @@ let toggleMusic = () => {
       let songName = musicArray[musicCount].name
       let textCorrectionAmount = 40 - musicArray[musicCount].name.length
       if(textCorrectionAmount > 0) {
-        console.log(textCorrectionAmount)
-        // songName = songName.padStart(10, ' ')
         songName = ' '.repeat(textCorrectionAmount) + musicArray[musicCount].name
-        console.log(songName);
       }
       document.querySelector(".songName").textContent = songName;
       musicOptions.setAttribute("style", "display:flex");

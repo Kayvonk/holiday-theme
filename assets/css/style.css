@@ -153,20 +153,6 @@ main {
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fadeOut {
-  transition: ease-out 0.25s;
-  opacity: 0;
-}
-
 /* -------------SNOW----------- */
 
 #snow {
@@ -603,6 +589,7 @@ footer div:nth-child(4) {
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 1;
 }
 
 #musicOptions div {
@@ -657,7 +644,7 @@ footer div:nth-child(4) {
   margin-top: 5vh;
   border-radius: 50px;
   padding: 0 1rem;
-  box-shadow: 5px 5px 5px 0px rgba(41,41,41,0.86);
+  box-shadow: 5px 5px 5px 0px rgba(41, 41, 41, 0.86);
 }
 
 @media (max-width: 769px) {
@@ -688,4 +675,17 @@ footer div:nth-child(4) {
   to {
     transform: translateX(-110%);
   }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  transition: ease-in-out 0.25s;
+  opacity: 0;
 }
